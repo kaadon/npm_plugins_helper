@@ -1,6 +1,6 @@
 {
   "name": "@kaadon.com/helper",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "kaadon.com's plugins helper",
   "keywords": [
     "kaadon",
@@ -30,5 +30,8 @@
     "@babel/parser": "^7",
     "@babel/preset-env": "^7",
     "dotenv": "^16.3.1"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.1.2"
   }
 }
