@@ -74,3 +74,7 @@ export function IntervalTimer(callback, timer = 1000, arg = null) {
         IntervalTimer(callback, timer, arg)
     }, parseInt(timer))
 }
+
+export async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
