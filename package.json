@@ -1,6 +1,6 @@
 {
   "name": "@kaadon.com/helper",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "kaadon.com's plugins helper",
   "keywords": [
     "kaadon",
@@ -32,6 +32,8 @@
     "dotenv": "^16.3.1"
   },
   "dependencies": {
-    "bignumber.js": "^9.1.2"
+    "bignumber.js": "^9.1.2",
+    "jsonwebtoken": "^9.0.2",
+    "pako": "^2.1.0"
   }
 }
