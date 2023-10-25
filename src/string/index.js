@@ -45,7 +45,7 @@ export function toJSON(variable) {
 }
 
 
-export function pad(strings, key) {
+export function padString(strings, key) {
     const maxLength = 20;
     strings = [...strings];
     let start = strings.splice(0, 1)[0].trim();
