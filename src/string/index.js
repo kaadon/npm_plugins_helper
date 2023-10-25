@@ -43,3 +43,11 @@ export function toJSON(variable) {
     // 变量是JSON
     return json;
 }
+
+
+export function pad(strings, key) {
+    const maxLength = 20;
+    strings = [...strings];
+    let start = strings.splice(0, 1)[0].trim();
+    return ` ${start.padEnd(maxLength)}${key}${strings.pop() || ""}`;
+}
