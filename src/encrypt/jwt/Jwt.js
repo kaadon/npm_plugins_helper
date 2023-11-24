@@ -1,9 +1,5 @@
 import * as __defaultKey from "./defaultKey";
 import jsonwebtoken from "jsonwebtoken";
-
-import {JSXElement} from "@babel/generator/lib/generators/jsx";
-
-
 class Jwt {
     PublicKey = __defaultKey.PublicKey
     PrivateKey = __defaultKey.PrivateKey
