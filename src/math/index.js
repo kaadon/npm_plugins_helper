@@ -1,5 +1,4 @@
 import { BigNumber } from 'bignumber.js';
-import fs from "fs";
 import crypto from "crypto";
 
 export function MathRound(float, num) {
@@ -31,14 +30,6 @@ export function dev(a, b) {
     return a.dividedBy(b).toNumber();
 }
 
-
-export const fileCp = (oldPath,newPath) => {
-    try {
-        fs.renameSync(oldPath, newPath);
-    } catch (err) {
-        throw err
-    }
-}
 export const randomIntFromInterval =( min, max) =>  {
     const rangeNumber = max - min;
     if (rangeNumber < 0) {
