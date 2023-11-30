@@ -1,5 +1,4 @@
 import { BigNumber } from 'bignumber.js';
-import fs from "fs";
 import crypto from "crypto";
 
 export function MathRound(float, num) {
@@ -31,15 +30,7 @@ export function dev(a, b) {
     return a.dividedBy(b).toNumber();
 }
 
-
-export const fileCp = (oldPath,newPath) => {
-    try {
-        fs.renameSync(oldPath, newPath);
-    } catch (err) {
-        throw err
-    }
-}
-export const randomIntFromInterval =( min, max) =>  {
+export const randomIntFromInterval = (min, max) => {
     const rangeNumber = max - min;
     if (rangeNumber < 0) {
         throw new Error('最大值必须大于最小值');
@@ -52,4 +43,5 @@ export const randomIntFromInterval =( min, max) =>  {
         randomNumber = randomBytes.reduce((acc, byte, idx) => acc + byte * Math.pow(256, idx), 0);
     } while (randomNumber >= maxValue - maxValue % (rangeNumber + 1));
     return min + randomNumber % (rangeNumber + 1);
-}
+};
+
