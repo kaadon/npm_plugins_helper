@@ -9,11 +9,16 @@ export * as encryptHelper from "./encrypt"
 export * as arrayHelper from "./array"
 export * as netHelper from "./net"
 export class KaadonError extends Error {
-    constructor(message, code = 201, type = "ERROR") {
+    constructor(message, code = 201, type = "ERROR",options = {}) {
         if (typeof message === "object") message = JSON.stringify(message)
         super(message); // 调用父类Error的构造函数
         this.code = parseInt(code);
         this.type = type.toString();
         this.name = 'KaadonError';
+        if (JSON.stringify(options) !== '{}'){
+            Object.keys(options).forEach((item)=>{
+                this[item] = options[item]
+            })
+        }
     }
 }
