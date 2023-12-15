@@ -207,3 +207,4 @@ dist
 /test/
 /.run/
 /helper/
+/package-lock.json
