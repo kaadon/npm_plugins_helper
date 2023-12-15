@@ -16,11 +16,23 @@ export function toBase64(str) {
     return Buffer.from(str).toString("base64")
 }
 
-export function fromBase64(str) {
-    if (str === "0") return
-    if (typeof str === "string") return JSON.parse(Buffer.from(str, 'base64').toString("utf8"))
-    throw new Error("数据错误!")
+export function fromBase64(str)  {
+    if (str === "0") return str;
+    if (typeof str !== "string") {
+        throw new Error("输入必须是字符串类型");
+    }
+    try {
+        str = Buffer.from(str, 'base64').toString("utf8");
+    } catch (e) {
+        return str
+    }
+    try {
+        return JSON.parse(str);
+    } catch (e) {
+        return str;
+    }
 }
+
 
 export function toJSON(variable) {
     // 检查变量是否为字符串类型
