@@ -1,20 +1,22 @@
 export const fileToBuffer = (file) => {
     return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            console.log(event)
-            Utf8A
-            const buffer = new Buffer(event.target.result);
-            resolve(buffer);
-        };
-        reader.onerror = function (error) {
-            reject(error);
-        };
-        reader.readAsArrayBuffer(file);
+        try {
+            //逻辑代码
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                resolve(typeof Buffer !== 'undefined' ? new Buffer(event.target.result) : new Uint8Array(event.target.result));
+            };
+            reader.onerror = function (error) {
+                reject(error);
+            };
+            reader.readAsArrayBuffer(file);
+        } catch (e) {
+            reject(e)
+        }
     });
 }
 
-export const readBlobAsText = (blobUrl)=> {
+export const readBlobAsText = (blobUrl) => {
     return new Promise((resolve, reject) => {
         // 从 Blob URL 创建一个 Blob 对象
         fetch(blobUrl)
