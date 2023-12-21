@@ -8,6 +8,7 @@ export * as messageHelper from "./message"
 export * as encryptHelper from "./encrypt"
 export * as arrayHelper from "./array"
 export * as netHelper from "./net"
+export * as fileHelper from "./file"
 export class KaadonError extends Error {
     constructor(message, code = 201, type = "ERROR",options = {}) {
         if (typeof message === "object") message = JSON.stringify(message)
